@@ -1,0 +1,66 @@
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Solar app icon">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#A560EC"/>
+      <stop offset="100%" stop-color="#5424A8"/>
+    </linearGradient>
+
+    <linearGradient id="sun" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#FFE484"/>
+      <stop offset="55%" stop-color="#FFD54A"/>
+      <stop offset="100%" stop-color="#EDAA22"/>
+    </linearGradient>
+
+    <linearGradient id="standGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1A0E38"/>
+      <stop offset="100%" stop-color="#2A1850"/>
+    </linearGradient>
+
+    <clipPath id="bgClip">
+      <rect width="1024" height="1024" rx="230"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1024" height="1024" rx="230" fill="url(#bg)"/>
+
+  <g clip-path="url(#bgClip)">
+    <!-- Sun: simple disc, vertical gradient -->
+    <circle cx="340" cy="335" r="285" fill="url(#sun)"/>
+
+    <!-- Kickstand: small wedge peeking out behind panel right edge -->
+    <path d="M 870 730 L 960 870 L 870 900 Z" fill="url(#standGrad)"/>
+
+    <!-- Solar panel: tilted parallelogram via matrix transform.
+         Source 300x200 maps to:
+           (0,0)     -> (595, 605)
+           (300,0)   -> (955, 656)
+           (0,200)   -> (529, 855)
+           (300,200) -> (889, 906) -->
+    <g transform="matrix(1.2, 0.17, -0.33, 1.25, 595, 605)">
+      <!-- Dark base: fills cell gaps and extends past as a border -->
+      <rect x="-6" y="-6" width="312" height="212" rx="8" fill="#1A0E38"/>
+
+      <!-- Cell grid 4x4: gradient lifted at the dark end, top row unchanged -->
+      <rect x="0"   y="0"   width="72" height="47" rx="4" fill="#7B50B8"/>
+      <rect x="76"  y="0"   width="72" height="47" rx="4" fill="#6E46AC"/>
+      <rect x="152" y="0"   width="72" height="47" rx="4" fill="#603C9C"/>
+      <rect x="228" y="0"   width="72" height="47" rx="4" fill="#54348E"/>
+
+      <rect x="0"   y="51"  width="72" height="47" rx="4" fill="#613E95"/>
+      <rect x="76"  y="51"  width="72" height="47" rx="4" fill="#57378A"/>
+      <rect x="152" y="51"  width="72" height="47" rx="4" fill="#4D307E"/>
+      <rect x="228" y="51"  width="72" height="47" rx="4" fill="#432973"/>
+
+      <rect x="0"   y="102" width="72" height="47" rx="4" fill="#482C73"/>
+      <rect x="76"  y="102" width="72" height="47" rx="4" fill="#40276A"/>
+      <rect x="152" y="102" width="72" height="47" rx="4" fill="#392260"/>
+      <rect x="228" y="102" width="72" height="47" rx="4" fill="#311D57"/>
+
+      <rect x="0"   y="153" width="72" height="47" rx="4" fill="#2E1A50"/>
+      <rect x="76"  y="153" width="72" height="47" rx="4" fill="#291749"/>
+      <rect x="152" y="153" width="72" height="47" rx="4" fill="#251543"/>
+      <rect x="228" y="153" width="72" height="47" rx="4" fill="#20123C"/>
+    </g>
+  </g>
+</svg>

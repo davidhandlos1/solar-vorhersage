@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <!-- Favicon & PWA -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#08080d" media="(prefers-color-scheme: dark)" />
+    <meta name="google-site-verification" content="CKatSkDqt_Ltx0DSr5jKbbigzKLnibt9X-YUcEjyEeQ" />
+    <link rel="apple-touch-icon" href="/favicon-192.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Solar-Vorhersage" />
+
+    <!-- Primary meta (German default, overridden by script for EN) -->
+    <title>Solar-Vorhersage | 7-Tage PV-Ertrag, Wetter &amp; Strompreise</title>
+    <meta name="description" content="Kostenlose 7-Tage-Solarprognose für deine PV-Anlage. Stündliche Leistungsvorhersage, Wetter, Einstrahlung und Börsenstrompreise — direkt im Browser, ohne Anmeldung." />
+
+    <!-- Canonical & hreflang (8 languages + x-default).
+         Rule: only x-default points to "/"; each language strictly maps to /<lang>/.
+         This prevents duplicate-content merging between "/" and "/de/" etc. -->
+    <link rel="canonical" href="https://solar-vorhersage.de/" />
+    <link rel="alternate" hreflang="x-default" href="https://solar-vorhersage.de/" />
+    <link rel="alternate" hreflang="de" href="https://solar-vorhersage.de/de/" />
+    <link rel="alternate" hreflang="en" href="https://solar-vorhersage.de/en/" />
+    <link rel="alternate" hreflang="fr" href="https://solar-vorhersage.de/fr/" />
+    <link rel="alternate" hreflang="it" href="https://solar-vorhersage.de/it/" />
+    <link rel="alternate" hreflang="es" href="https://solar-vorhersage.de/es/" />
+    <link rel="alternate" hreflang="nl" href="https://solar-vorhersage.de/nl/" />
+    <link rel="alternate" hreflang="pl" href="https://solar-vorhersage.de/pl/" />
+    <link rel="alternate" hreflang="pt" href="https://solar-vorhersage.de/pt/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://solar-vorhersage.de/" />
+    <meta property="og:title" content="Solar-Vorhersage | 7-Tage PV-Ertrag, Wetter &amp; Strompreise" />
+    <meta property="og:description" content="Kostenlose 7-Tage-Solarprognose für deine PV-Anlage. Stündliche Leistungsvorhersage, Wetter, Einstrahlung und Börsenstrompreise — direkt im Browser, ohne Anmeldung." />
+    <meta property="og:image" content="https://solar-vorhersage.de/og-image.png" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Solar-Vorhersage | 7-Tage PV-Ertrag, Wetter &amp; Strompreise" />
+    <meta name="twitter:description" content="Kostenlose 7-Tage-Solarprognose für deine PV-Anlage. Stündliche Leistungsvorhersage, Wetter, Einstrahlung und Börsenstrompreise — direkt im Browser, ohne Anmeldung." />
+    <meta name="twitter:image" content="https://solar-vorhersage.de/og-image.png" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Solar-Vorhersage",
+      "alternateName": "Solar Power Forecast",
+      "url": "https://solar-vorhersage.de/",
+      "description": "Kostenlose 7-Tage-Solarprognose für Photovoltaikanlagen mit stündlicher Leistungsvorhersage, Wetter und Börsenstrompreisen.",
+      "applicationCategory": "WeatherApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "inLanguage": ["de", "en", "fr", "it", "es", "nl", "pl", "pt"]
+    }
+    </script>
+
+    <!-- Language-aware meta: detect URL path or browser language, swap title/description for non-DE users.
+         Path-based detection (e.g. /fr/) wins over navigator.language. Static defaults are German.
+         If you change SEO strings here, also update the matching keys in src/i18n/<lang>.ts. -->
+    <script>
+      (function() {
+        var SEO = {
+          en: { title: 'Solar Power Forecast | 7-Day PV Power, Weather & Prices', desc: 'Free 7-day solar forecast for your PV system. Hourly power, weather, irradiance and wholesale electricity prices \u2014 in your browser, no sign-up.', ogLocale: 'en_US', appName: 'Solar Power Forecast' },
+          fr: { title: 'Pr\u00e9vision Solaire | Production PV 7 jours, m\u00e9t\u00e9o & prix', desc: 'Pr\u00e9vision solaire 7 jours gratuite pour votre installation PV. Production horaire, m\u00e9t\u00e9o, irradiance et prix de gros \u2014 sans inscription.', ogLocale: 'fr_FR', appName: 'Pr\u00e9vision Solaire' },
+          it: { title: 'Previsione Solare | Produzione FV 7 giorni, meteo & prezzi', desc: 'Previsione solare gratuita 7 giorni per il tuo impianto fotovoltaico. Produzione oraria, meteo, irradianza e prezzi all\u2019ingrosso \u2014 senza registrazione.', ogLocale: 'it_IT', appName: 'Previsione Solare' },
+          es: { title: 'Previsi\u00f3n Solar | Producci\u00f3n FV 7 d\u00edas, clima & precios', desc: 'Previsi\u00f3n solar gratuita 7 d\u00edas para tu instalaci\u00f3n fotovoltaica. Producci\u00f3n por hora, clima, irradiancia y precios mayoristas \u2014 sin registro.', ogLocale: 'es_ES', appName: 'Previsi\u00f3n Solar' },
+          nl: { title: 'Zonneprognose | PV-opbrengst 7 dagen, weer & prijzen', desc: 'Gratis 7-daagse zonneprognose voor je PV-installatie. Uurlijkse opbrengst, weer, instraling en groothandelsprijzen \u2014 zonder registratie.', ogLocale: 'nl_NL', appName: 'Zonneprognose' },
+          pl: { title: 'Prognoza Solarna | Produkcja PV 7 dni, pogoda & ceny', desc: 'Bezp\u0142atna 7-dniowa prognoza dla instalacji fotowoltaicznej. Godzinowa produkcja, pogoda, nas\u0142onecznienie i ceny hurtowe \u2014 bez rejestracji.', ogLocale: 'pl_PL', appName: 'Prognoza Solarna' },
+          pt: { title: 'Previs\u00e3o Solar | Produ\u00e7\u00e3o FV 7 dias, tempo & pre\u00e7os', desc: 'Previs\u00e3o solar gratuita 7 dias para a sua instala\u00e7\u00e3o fotovoltaica. Produ\u00e7\u00e3o hor\u00e1ria, tempo, irradi\u00e2ncia e pre\u00e7os grossistas \u2014 sem registo.', ogLocale: 'pt_PT', appName: 'Previs\u00e3o Solar' }
+        };
+        var SUPPORTED = ['de','en','fr','it','es','nl','pl','pt'];
+        function pick() {
+          var parts = location.pathname.toLowerCase().split('/');
+          for (var i = 0; i < parts.length; i++) {
+            if (SUPPORTED.indexOf(parts[i]) >= 0) return parts[i];
+          }
+          var nav = (navigator.language || '').toLowerCase().split('-')[0];
+          return SUPPORTED.indexOf(nav) >= 0 ? nav : 'en';
+        }
+        var lang = pick();
+        if (lang === 'de') return; // static defaults are already German
+        var s = SEO[lang];
+        document.documentElement.lang = lang;
+        document.title = s.title;
+        var setAttr = function(selector, attr, value) {
+          var el = document.querySelector(selector);
+          if (el) el.setAttribute(attr, value);
+        };
+        setAttr('meta[name="description"]', 'content', s.desc);
+        setAttr('meta[property="og:title"]', 'content', s.title);
+        setAttr('meta[property="og:description"]', 'content', s.desc);
+        setAttr('meta[property="og:locale"]', 'content', s.ogLocale);
+        setAttr('meta[name="twitter:title"]', 'content', s.title);
+        setAttr('meta[name="twitter:description"]', 'content', s.desc);
+        setAttr('meta[name="apple-mobile-web-app-title"]', 'content', s.appName);
+      })();
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZFYRWJYNTY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ZFYRWJYNTY');
+    </script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { background: #ffffff; }
+      @media (prefers-color-scheme: dark) {
+        body { background: #08080d; }
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/index-BAdE5Hrz.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CkXO0E8m.css">
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- Fallback content for crawlers / no-JS -->
+    <noscript>
+      <div style="max-width:700px;margin:40px auto;padding:0 20px;color:#e5e5e5;font-family:system-ui,sans-serif">
+        <h1>&#9728;&#65039; Solar-Vorhersage</h1>
+        <p style="margin:12px 0;color:#999">Kostenlose 7-Tage-Solarprognose f&uuml;r Photovoltaikanlagen &mdash; Free 7-day solar forecast for PV systems</p>
+        <ul style="margin:12px 0 24px 20px;color:#888">
+          <li>7-Tage PV-Ertragsprognose mit st&uuml;ndlicher Leistungsvorhersage</li>
+          <li>Bis zu 3 Dachfl&auml;chen mit individueller Ausrichtung &amp; Neigung</li>
+          <li>Wetter&uuml;bersicht: Temperatur, Bew&ouml;lkung, UV-Index, Sonnenscheindauer</li>
+          <li>B&ouml;rsenstrompreise vom Gro&szlig;handelsmarkt (EPEX SPOT)</li>
+          <li>Automatische Aktualisierung alle 30 Minuten</li>
+          <li>Keine Anmeldung n&ouml;tig &mdash; funktioniert auf allen Ger&auml;ten</li>
+        </ul>
+        <p style="color:#666;font-size:14px">Daten: Open-Meteo (ECMWF IFS + DWD ICON) &middot; Preise: aWATTar (EPEX SPOT) &middot; Referenz: EU PVGIS</p>
+        <p style="color:#555;font-size:13px;margin-top:20px">Diese App ben&ouml;tigt JavaScript. Bitte aktiviere JavaScript in deinem Browser. &mdash; This app requires JavaScript.</p>
+      </div>
+    </noscript>
+  </body>
+</html>

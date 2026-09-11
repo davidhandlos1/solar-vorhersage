@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <!-- Favicon & PWA -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#08080d" media="(prefers-color-scheme: dark)" />
+    <meta name="google-site-verification" content="CKatSkDqt_Ltx0DSr5jKbbigzKLnibt9X-YUcEjyEeQ" />
+    <link rel="apple-touch-icon" href="/favicon-192.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Previsão Solar" />
+
+    <!-- Primary meta (German default, overridden by script for EN) -->
+    <title>Previsão Solar | Produção FV 7 dias, tempo &amp; preços</title>
+    <meta name="description" content="Previsão solar gratuita 7 dias para a sua instalação fotovoltaica. Produção horária, tempo, irradiância e preços grossistas — sem registo." />
+
+    <!-- Canonical & hreflang (8 languages + x-default).
+         Rule: only x-default points to "/"; each language strictly maps to /<lang>/.
+         This prevents duplicate-content merging between "/" and "/de/" etc. -->
+    <link rel="canonical" href="https://solar-vorhersage.de/pt/" />
+    <link rel="alternate" hreflang="x-default" href="https://solar-vorhersage.de/" />
+    <link rel="alternate" hreflang="de" href="https://solar-vorhersage.de/de/" />
+    <link rel="alternate" hreflang="en" href="https://solar-vorhersage.de/en/" />
+    <link rel="alternate" hreflang="fr" href="https://solar-vorhersage.de/fr/" />
+    <link rel="alternate" hreflang="it" href="https://solar-vorhersage.de/it/" />
+    <link rel="alternate" hreflang="es" href="https://solar-vorhersage.de/es/" />
+    <link rel="alternate" hreflang="nl" href="https://solar-vorhersage.de/nl/" />
+    <link rel="alternate" hreflang="pl" href="https://solar-vorhersage.de/pl/" />
+    <link rel="alternate" hreflang="pt" href="https://solar-vorhersage.de/pt/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://solar-vorhersage.de/pt/" />
+    <meta property="og:title" content="Previsão Solar | Produção FV 7 dias, tempo &amp; preços" />
+    <meta property="og:description" content="Previsão solar gratuita 7 dias para a sua instalação fotovoltaica. Produção horária, tempo, irradiância e preços grossistas — sem registo." />
+    <meta property="og:image" content="https://solar-vorhersage.de/og-image.png" />
+    <meta property="og:locale" content="pt_PT" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Previsão Solar | Produção FV 7 dias, tempo &amp; preços" />
+    <meta name="twitter:description" content="Previsão solar gratuita 7 dias para a sua instalação fotovoltaica. Produção horária, tempo, irradiância e preços grossistas — sem registo." />
+    <meta name="twitter:image" content="https://solar-vorhersage.de/og-image.png" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Solar-Vorhersage",
+      "alternateName": "Solar Power Forecast",
+      "url": "https://solar-vorhersage.de/pt/",
+      "description": "Previsão solar gratuita 7 dias para a sua instalação fotovoltaica. Produção horária, tempo, irradiância e preços grossistas — sem registo.",
+      "applicationCategory": "WeatherApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "inLanguage": ["de", "en", "fr", "it", "es", "nl", "pl", "pt"]
+    }
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZFYRWJYNTY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ZFYRWJYNTY');
+    </script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { background: #ffffff; }
+      @media (prefers-color-scheme: dark) {
+        body { background: #08080d; }
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/index-BAdE5Hrz.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CkXO0E8m.css">
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- Fallback content for crawlers / no-JS -->
+    <noscript>
+      <div style="max-width:700px;margin:40px auto;padding:0 20px;color:#e5e5e5;font-family:system-ui,sans-serif">
+        <h1>&#9728;&#65039; Previsão Solar</h1>
+        <p style="margin:12px 0;color:#999">Previsão solar gratuita 7 dias para a sua instalação fotovoltaica. Produção horária, tempo, irradiância e preços grossistas — sem registo.</p>
+        <p style="color:#666;font-size:14px">Open-Meteo (ECMWF IFS + DWD ICON) &middot; aWATTar (EPEX SPOT) &middot; EU PVGIS</p>
+        <p style="color:#555;font-size:13px;margin-top:20px">Esta aplicação requer JavaScript. Ative-o no seu navegador.</p>
+      </div>
+    </noscript>
+  </body>
+</html>
